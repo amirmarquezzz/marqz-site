@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marqz - Tu Mundo Gamer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Orbitron', sans-serif; background: #111; color: #fff; }
+    header, nav, section, footer { padding: 40px 20px; max-width: 1200px; margin: auto; }
+    nav { position: fixed; top: 0; width: 100%; background: #000; z-index: 100; display: flex; justify-content: center; }
+    nav a { color: #0ff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    header { text-align: center; background: #000; padding-top: 80px; }
+    header img.logo { width: 200px; }
+    h1, h2 { color: #0ff; text-align: center; }
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: #222; border-radius: 10px; padding: 20px; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: none; border-radius: 5px; }
+    .contact-form button { padding: 10px 20px; background: #0ff; border: none; color: #000; font-weight: bold; cursor: pointer; }
+    iframe { width: 100%; height: 300px; border: 0; border-radius: 10px; }
+    .owner-photo { width: 200px; border-radius: 50%; display: block; margin: 20px auto; }
+    .cart { position: fixed; right: 20px; top: 80px; background: #222; padding: 10px; border-radius: 8px; width: 300px; max-height: 400px; overflow-y: auto; }
+    .cart h3 { margin-top: 0; color: #0ff; }
+    .cart-item { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    .cart-total { font-weight: bold; margin-top: 10px; }
+    .payment-methods { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#quienes">Quiénes Somos</a>
+    <a href="#productos">Productos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <header id="inicio">
+    <img src="logo.png" alt="Logo Marqz" class="logo">
+    <h1>Tu mundo gamer empieza aquí</h1>
+  </header>
+
+  <section id="quienes">
+    <h2>Quiénes Somos</h2>
+    <p>En <strong>Marqz</strong>, somos apasionados por los videojuegos. Ofrecemos consolas, juegos, accesorios y servicios de mantenimiento. Nuestro compromiso es brindar la mejor experiencia gamer en Tijuana.</p>
+    <ul>
+      <li><strong>Misión:</strong> Brindar productos y servicios de calidad a la comunidad gamer.</li>
+      <li><strong>Visión:</strong> Ser la tienda gamer líder en Tijuana.</li>
+      <li><strong>Valores:</strong> Pasión, innovación, servicio.</li>
+    </ul>
+    <img src="owner.jpg" alt="Amir Márquez - Dueño de Marqz" class="owner-photo">
+    <p style="text-align: center;"><strong>Amir Márquez</strong></p>
+  </section>
+
+  <section id="productos">
+    <h2>Productos</h2>
+    <!-- Ecwid Storefront Widget -->
+    <div id="my-store-REPLACE_WITH_YOUR_STORE_ID"></div>
+    <script src="https://app.ecwid.com/script.js?REPLACE_WITH_YOUR_STORE_ID" charset="utf-8"></script>
+    <script>
+      xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","styles=none");
+    </script>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Limpieza de Consolas</h3>
+        <p>Mantenimiento profesional por dentro y fuera.</p>
+        <p><strong>$500 MXN</strong></p>
+      </div>
+      <div class="card">
+        <h3>Reparación de Controles</h3>
+        <p>Revisión y cambio de partes defectuosas.</p>
+        <p><strong>Desde $300 MXN</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p><strong>Dirección:</strong> Hipódromo, Tijuana, Baja California</p>
+    <p><strong>Teléfono:</strong> +52 664 123 4567</p>
+    <p><strong>Email:</strong> contacto.marqz@gmail.com</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea rows="4" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <br>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31745.30494238657!2d-117.0268465!3d32.5131464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d938c7d3e775d7%3A0x282d4ab56c3c0f0a!2sHip%C3%B3dromo%2C%2022120%20Tijuana%2C%20B.C.%2C%20M%C3%A9xico!5e0!3m2!1ses!2sus!4v1621091123456" allowfullscreen=""></iframe> 
+  </section>
+
+  <div class="cart" id="cart">
+    <h3>Carrito</h3>
+    <div id="cart-items"></div>
+    <div class="cart-total" id="cart-total">Total: $0 MXN</div>
+    <div class="payment-methods">
+      <label>Método de pago:</label><br>
+      <select id="payment-method">
+        <option value="tarjeta">Tarjeta</option>
+        <option value="paypal">PayPal</option>
+        <option value="oxxo">OXXO</option>
+      </select>
+    </div>
+    <button onclick="checkout()">Pagar</button>
+  </div>
+
+  <script>
+    let cart = [];
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      renderCart();
+    }
+    function renderCart() {
+      const itemsDiv = document.getElementById('cart-items');
+      itemsDiv.innerHTML = '';
+      let total = 0;
+      cart.forEach((item) => {
+        total += item.price;
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.textContent = `${item.name} - $${item.price} MXN`;
+        itemsDiv.appendChild(div);
+      });
+      document.getElementById('cart-total').textContent = `Total: $${total} MXN`;
+    }
+    function checkout() {
+      const method = document.getElementById('payment-method').value;
+      alert('Procesando pago con ' + method + '. Total: ' + document.getElementById('cart-total').textContent);
+    }
+  </script>
+
+  <footer>
+    <p style="text-align:center; color:#999">&copy; 2025 Marqz. Todos los derechos reservados.</p>
+    <p style="text-align:center; color:#999">Política de Devoluciones: Los productos sellados pueden ser devueltos dentro de los 30 días posteriores a la compra, sin abrir y en su empaque original.</p>
+  </footer>
+</body>
+</html>
